@@ -4,7 +4,7 @@ CH01 - @SHAHEEN - Deprecated saving wave to address mapping
 CH02 - @SHAHEEN - Modified wave function to take message argument and push wave data in a struct 
 CH03 - @SHAHEEN - Sending 0.0001 ETH to all lovely wavers
 CH04 - @SHAHEEN - Now only lucky few will get a chance to win eth + Cooldown logic. Dont want a spammer to keep waving and finish our funds!
-
+updates to git
 */
 
 pragma solidity ^0.8.0;
