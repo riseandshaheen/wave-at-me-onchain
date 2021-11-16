@@ -1,0 +1,51 @@
+const main = async () => {
+
+    const [owner, randomPerson] = await hre.ethers.getSigners();
+    const waveContractFactory = await hre.ethers.getContractFactory('WavePortal'); //how is it accessing contract? we didnt import!
+    const waveContract = await waveContractFactory.deploy({ value: hre.ethers.utils.parseEther('0.1'), }); //CH03 parsing value
+    await waveContract.deployed();
+    console.log("Contract deployed to:", waveContract.address);
+    console.log("Contract deployed by:", owner.address);
+
+    /* get contract balance */
+    let contractBalance = await hre.ethers.provider.getBalance(waveContract.address);
+    console.log(
+        'Contract balance:',
+        hre.ethers.utils.formatEther(contractBalance)
+    );
+
+
+  /* Let's try two waves now*/
+  const waveTxn = await waveContract.wave('This is wave #1');
+  await waveTxn.wait();
+
+  
+ // wait for 15 secs
+//  await new Promise(resolve => setTimeout(resolve, 15000));
+  console.log("Waited 15 seconds before next wave");
+
+  const waveTxn2 = await waveContract.wave('This is wave #2');
+  await waveTxn2.wait();
+
+    /** Get Contract balance to see what happened!**/
+    contractBalance = await hre.ethers.provider.getBalance(waveContract.address);
+    console.log(
+        'Contract balance:',
+        hre.ethers.utils.formatEther(contractBalance)
+    );
+
+    let allWaves = await waveContract.getAllWaves();
+    console.log(allWaves);
+};
+
+const runMain = async () => {
+    try {
+        await main();
+        process.exit(0);
+    } catch (error) {
+        console.log(error);
+        process.exit(1);
+    }
+};
+
+runMain();

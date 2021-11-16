@@ -1,0 +1,99 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 64px;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*max-width: 600px; */
+  width: 50%;
+}
+
+.header {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-family: 'Annie Use Your Telescope';
+}
+
+.bio {
+  text-align: center;
+  color: gray;
+  margin-top: 16px;
+}
+
+.waveButton {
+ /* background-image: linear-gradient(to right, #556270 0%, #FF6B6B  51%, #556270  100%); */
+
+  background: rgb(63,94,251);
+background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+
+
+  margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+  
+}
+          .waveButton:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+
+/* loading animation */
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+.message {
+    font-family: sans-serif, monospace;
+    font-size: 20px;
+    
+   /* min-height: 70px;
+    min-width: 500px;
+    max-width: 600px; */
+    
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #c1c1c1;
+   
+}

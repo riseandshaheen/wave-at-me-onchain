@@ -1,0 +1,42 @@
+.footer {
+
+   /* position:fixed; */
+   position:relative;
+     width: 100%;
+    bottom: 0; 
+    color: black;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5em;
+    clear: both;
+    z-index: 1;
+   }
+
+   .fa {  
+    width: 20px;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0px 2px;
+    color: black;
+    border-radius: 50%; 
+  }
+
+   .fa:hover {
+    opacity: 0.7;
+}
+  /* .fa-twitter {
+    background: #55ACEE;
+  }
+  .fa-instagram {
+    background: #8a3ab9;
+  } */
+
+  .socialmedia{
+      margin-bottom: 1px;
+  }
+
+  .buildspace{
+      margin-top: 2px;
+  }
